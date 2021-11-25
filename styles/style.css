@@ -25,9 +25,10 @@ li, a {
     font-weight: 300;
     font-size: 16px;
     text-decoration: none;
+    list-style: none;
     color: var(--blue-1);
 }
-.nav_links .link_about_me {
+.violet {
     font-weight: 900;
     color: var(--accent);
 }
@@ -36,6 +37,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin 
+    
 }
 /* 960 de largeur */
