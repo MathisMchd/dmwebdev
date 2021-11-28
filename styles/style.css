@@ -74,14 +74,18 @@ body {
 }
 .phone-mail{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: auto;
 }
 .line {
-    border-left: 1px solid var(--blue-3);
+    border-left: 1px solid red;
     display: block;
+    left: 50%;
+
     height: 27px;
-    margin: 0 auto;
+    /* padding: 10px; */
+    
 }
 
 
