@@ -29,7 +29,7 @@ body {
     border-bottom: 1px solid var(--border-line);
  }
 .nav-content {
-    max-width: 960px;
+    max-width: 944px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@ body {
 
 .nav_links li {
     display: inline-block;
-    padding: 0px 19px;
+    padding: 0px 20px;
 }
 
 .nav_links li a {
@@ -66,26 +66,22 @@ body {
 
 /* PERSONAL INTRODUCTION */
 .personal-introduction {
-    padding: 113px;
     text-align: center;
+    padding: 113px;
 }
 .image-head {
-    margin-top: 80pxx;
+    margin-top: 80px;
 }
 .phone-mail{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-}
+} 
 .line {
-    border-left: 1px solid red;
+    margin: 0px 20px 0px 20px;
+    border-left: 1px solid var(--blue-3);
     display: block;
-    left: 50%;
-
-    height: 27px;
-    /* padding: 10px; */
-    
+    height: 27px;    
 }
 
 
