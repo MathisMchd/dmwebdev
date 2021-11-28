@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
 }
 :root {
     --white: #FFFFFF;
@@ -13,26 +12,28 @@
     --blue-4:#F9FBFD;
     --border-line:#E5EBF2;
 }
+/* Span violet */
 .violet {
     font-weight: 900;
     color: var(--accent);
 }
 
 body {
-    margin: 0 auto;
-    max-width: 960px;
     font-family: 'Roboto', sans-serif;
 }
-
+/* TYPOGRA */
 
  /* NAV BAR */
  header {
-    
+    padding: 50px 0px;
+    border-bottom: 1px solid var(--border-line);
+ }
+.nav-content {
+    max-width: 960px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0px;
-    border-bottom: 1px solid var(--border-line);
 }
 
 .myname-nav {
@@ -62,4 +63,42 @@ body {
 .nav_links li a:hover {
     color:var(--accent)
 }
-/* 960 de largeur */
+
+/* PERSONAL INTRODUCTION */
+.personal-introduction {
+    padding: 113px;
+    text-align: center;
+}
+.image-head {
+    margin-top: 80pxx;
+}
+.phone-mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line {
+    border-left: 1px solid var(--blue-3);
+    display: block;
+    height: 27px;
+    margin: 0 auto;
+}
+
+
+/* PERSONAL DESCRIPTION */
+
+.personal-description {
+    background-color: var(--blue-4);
+    text-align: center;
+}
+.description {
+    margin: 0 auto;
+    max-width: 610px;
+}
+
+/* EXPERIENCE */
+
+.experience .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
