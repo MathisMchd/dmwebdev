@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 :root {
     --white: #FFFFFF;
@@ -66,17 +65,29 @@ body {
 
 /* PERSONAL INTRODUCTION */
 .personal-introduction {
+    margin-top: 113px;
+    margin-bottom: 132px;
+}
+.personal-introduction .introduction {
     text-align: center;
-    padding: 113px;
 }
 .image-head {
     margin-top: 80px;
 }
-.phone-mail{
+.information {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+    line-height: 30px;
+}
+.phone {
+    text-align: end;
+    width: 120px;
+}
+.mail {
+    text-align: start;
+    width: 120px;
+}
 .line {
     margin: 0px 20px 0px 20px;
     border-left: 1px solid var(--blue-3);
@@ -89,10 +100,11 @@ body {
 
 .personal-description {
     background-color: var(--blue-4);
-    text-align: center;
+    padding-top: 154px;
+    padding-bottom: 144px;
 }
 .description {
-    margin: 0 auto;
+    text-align: center;
     max-width: 610px;
 }
 
