@@ -20,7 +20,9 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-/* TYPOGRA */
+/* ===== TYPOGRAPHIE ====== */
+
+
 
  /* NAV BAR */
  header {
@@ -102,9 +104,10 @@ body {
     background-color: var(--blue-4);
     padding-top: 154px;
     padding-bottom: 144px;
+    text-align: center;
 }
 .description {
-    text-align: center;
+    align-items: center;
     max-width: 610px;
 }
 
