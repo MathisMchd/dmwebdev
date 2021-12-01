@@ -20,11 +20,17 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-/* ===== TYPOGRAPHIE ====== */
+/* ====== TYPOGRAPHIE ====== */
 
 
+.text-align-end {
+    text-align: end;
+}
+.text-align-start {
+    text-align: start;
+}
 
- /* NAV BAR */
+ /* ====== NAV BAR ====== */
  header {
     padding: 50px 0px;
     border-bottom: 1px solid var(--border-line);
@@ -42,13 +48,6 @@ body {
     font-size: 26px;
 }
 
-.nav_links li, a {
-    font-weight: 300;
-    font-size: 16px;
-    text-decoration: none;
-    color: var(--blue-1);
-}
-
 .nav_links {
     list-style: none;
 }
@@ -58,14 +57,18 @@ body {
     padding: 0px 20px;
 }
 
-.nav_links li a {
+.nav_links li, a {
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--blue-1);
     transition: all 0.25s ease-in-out;
 }
 .nav_links li a:hover {
     color:var(--accent)
 }
 
-/* PERSONAL INTRODUCTION */
+/* ===== PERSONAL INTRODUCTION ====== */
 .personal-introduction {
     margin-top: 113px;
     margin-bottom: 132px;
@@ -82,14 +85,7 @@ body {
     align-items: center;
     line-height: 30px;
 }
-.phone {
-    text-align: end;
-    width: 120px;
-}
-.mail {
-    text-align: start;
-    width: 120px;
-}
+
 .line {
     margin: 0px 20px 0px 20px;
     border-left: 1px solid var(--blue-3);
@@ -98,7 +94,7 @@ body {
 }
 
 
-/* PERSONAL DESCRIPTION */
+/* ==== PERSONAL DESCRIPTION ==== */
 
 .personal-description {
     background-color: var(--blue-4);
@@ -107,13 +103,30 @@ body {
     text-align: center;
 }
 .description {
-    align-items: center;
-    max-width: 610px;
+    margin: 0 auto;
+    max-width: 609px;
 }
 
-/* EXPERIENCE */
+/* ==== EXPERIENCE ==== */
+.experience > .title-section {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--border-line);
 
-.experience .container {
+}
+
+/* .experience .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+    padding-top: 120px;
+    text-align: center;
+} */
+
+.point {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: var(--accent);
+    margin: 0px 83px 0px;
+} 
