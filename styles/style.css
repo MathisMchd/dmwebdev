@@ -23,6 +23,20 @@ body {
 }
 /* ====== TYPOGRAPHIE ====== */
 
+.title-section {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--border-line);
+}
+/*  double border of title-section  */
+.double-border {
+    border-top: 1px solid var(--border-line);
+}
+
+
+
+
 
 .text-align-end {
     text-align: end;
@@ -113,25 +127,28 @@ body {
 .description > p {
    line-height: 30px;
 }
-/* ==== EXPERIENCE ==== */
-.experience > .title-section {
-    text-align: center;
-    padding-top: 48px;
-    padding-bottom: 44px;
-    border-bottom: 1px solid var(--border-line);
-
-}
-
+/* ==== EXPERIENCE ============= a faire ========== */
 .experience .container {
-    display: grid;
-    grid-template-columns: 1fr 9px 1fr;
     padding-top: 120px;
 }
 
-.decoration {
-    margin-left: auto;
-    margin-right: auto;
+.experience .container .component {
+    display: flex;
+    justify-content: center;
 }
+
+.experience > .container .date {
+    padding-right: 87px;
+    max-width: 380px;
+
+}
+
+.experience > .container .description-job {
+    padding-left: 87px;
+    max-width: 380px;
+}
+
+
 .point {
     display: block;
     width: 9px;
@@ -142,6 +159,26 @@ body {
 } 
 .line02 {
     display: block;
-    /* margin: 0 auto; */
+    width: 1px;    
     height: 224px;
+    margin: 4.5px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    background-color:var(--blue-3);
 }
+
+
+/* ===== SKILLS ====== */
+
+.skills .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+progress {
+    -webkit-appearance: none;
+}
+progress ::-webkit-progress-bar {
+    background-color:#0080ff;
+    
+} 
