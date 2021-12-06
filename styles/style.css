@@ -19,8 +19,9 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
 }
+
 /* ====== TYPOGRAPHIE ====== */
 
 .title-section {
@@ -28,6 +29,8 @@ body {
     padding-top: 48px;
     padding-bottom: 44px;
     border-bottom: 1px solid var(--border-line);
+    max-width: 80%;
+    margin: 0 auto;
 }
 /*  double border of title-section  */
 .double-border {
@@ -58,8 +61,8 @@ body {
     align-items: center;
 }
 
-.myname-nav {
-    font-weight: 900;
+.name {
+    font-family: 'Roboto normal 900';
     font-size: 26px;
 }
 
