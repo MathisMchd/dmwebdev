@@ -14,13 +14,14 @@
 }
 /* Span violet */
 .violet {
+    font-family: 'Roboto';
     font-weight: 900;
     color: var(--accent);
 }
 
-body {
-    /*font-family: 'Roboto', sans-serif;*/
-}
+/*body {
+    
+}*/
 
 /* ====== TYPOGRAPHIE ====== */
 
@@ -61,8 +62,10 @@ body {
     align-items: center;
 }
 
+
+/* ============== font face ========== */
 .name {
-    font-family: 'Roboto normal 900';
+    font-family: 'Roboto ';
     font-size: 26px;
 }
 
@@ -181,10 +184,7 @@ body {
 progress {
     -webkit-appearance: none;
 }
-progress ::-webkit-progress-bar {
-    background-color:#0080ff;
-    
-} 
+
 
 
 
