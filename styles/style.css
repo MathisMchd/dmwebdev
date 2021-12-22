@@ -12,6 +12,12 @@
     --blue-4:#F9FBFD;
     --border-line:#E5EBF2;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* Span violet */
 .violet {
     font-family: 'Roboto';
@@ -19,9 +25,7 @@
     color: var(--accent);
 }
 
-/*body {
-    
-}*/
+
 
 /* ====== TYPOGRAPHIE ====== */
 
@@ -138,10 +142,25 @@
     padding-top: 120px;
 }
 
-.experience .container .component {
-    display: flex;
-    justify-content: center;
+.experience .container .first-component {
+    display: grid;
+    grid-template-areas: 'deco' 'date' 'title-desc' 'desc';
 }
+
+.experience .container .first-component .decoration {
+    grid-area: deco;
+}
+.experience .container .first-component .date {
+    grid-area: date;
+}
+.experience .container .first-component .name-job {
+    grid-area: title-desc;
+}
+.experience .container .first-component .date {
+    grid-area: desc;
+}
+
+
 
 .experience > .container .date {
     padding-right: 87px;
