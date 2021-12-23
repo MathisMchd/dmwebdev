@@ -11,12 +11,47 @@
     --blue-3:#DCDCDE;
     --blue-4:#F9FBFD;
     --border-line:#E5EBF2;
+    --bg-progressbar: #DFE5EB;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+/* ==== decoration ==== */
+
+.dot {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50px;
+    background-color: var(--accent);
+}
+
+.line02 {
+    display: block;
+    width: 1px;
+    background-color:var(--blue-3);
+}
+
+.short-line {
+    height: 27px;
+    margin: 19px;
+}
+
+.long-line {
+    height: 224px;
+    margin: 4.5px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+.horizontal-line {
+    margin-left: 31px;
+    width: 414px;
+    height: 1px;
+    
+}
 
 /* Span violet */
 .violet {
@@ -38,13 +73,10 @@ html {
     margin: 0 auto;
 }
 /*  double border of title-section  */
+
 .double-border {
     border-top: 1px solid var(--border-line);
 }
-
-
-
-
 
 .text-align-end {
     text-align: end;
@@ -94,11 +126,11 @@ html {
 }
 
 /* ===== PERSONAL INTRODUCTION ====== */
-.personal-introduction {
+.personal-intro {
     margin-top: 113px;
     margin-bottom: 132px;
 }
-.personal-introduction .introduction {
+.personal-intro .introduction {
     text-align: center;
 }
 .image-head {
@@ -111,12 +143,7 @@ html {
     line-height: 30px;
 }
 
-.line01 {
-    margin: 0px 20px 0px 20px;
-    border-left: 1px solid var(--blue-3);
-    display: block;
-    height: 27px;    
-}
+
 
 
 /* ==== PERSONAL DESCRIPTION ==== */
@@ -137,60 +164,44 @@ html {
 .description > p {
    line-height: 30px;
 }
-/* ==== EXPERIENCE ============= a faire ========== */
+
+
+/* ==== EXPERIENCE ====*/
+
 .experience .container {
     padding-top: 120px;
 }
 
-.experience .container .first-component {
+.experience .container .component {
     display: grid;
-    grid-template-areas: 'deco' 'date' 'title-desc' 'desc';
+    grid-template-areas:
+    "deco date content1"
+    "deco date content2";   
+    justify-content: center;
 }
 
-.experience .container .first-component .decoration {
+.experience .container .component .decoration {
     grid-area: deco;
 }
-.experience .container .first-component .date {
+.experience .container .component .date {
+
     grid-area: date;
 }
-.experience .container .first-component .name-job {
-    grid-area: title-desc;
-}
-.experience .container .first-component .date {
-    grid-area: desc;
+.experience .container .component .name-job {
+    grid-area: content1;
 }
 
-
-
-.experience > .container .date {
-    padding-right: 87px;
-    max-width: 380px;
-
+.experience .container .component .description-job {
+    grid-area: content2;
 }
 
-.experience > .container .description-job {
-    padding-left: 87px;
-    max-width: 380px;
+.experience .container .component:last-child .line02 {
+    background: none;
 }
 
 
-.point {
-    display: block;
-    width: 9px;
-    height: 9px;
-    border-radius: 50px;
-    background-color: var(--accent);
-    margin: 0px;
-} 
-.line02 {
-    display: block;
-    width: 1px;    
-    height: 224px;
-    margin: 4.5px;
-    margin-top: 11px;
-    margin-bottom: 11px;
-    background-color:var(--blue-3);
-}
+
+
 
 
 /* ===== SKILLS ====== */
@@ -198,11 +209,21 @@ html {
 .skills .skills-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-content: center;
 }
 
 progress {
     -webkit-appearance: none;
+    height: 8px;
 }
+progress::-webkit-progress-bar {
+    border-radius: 100px;
+    background-color: var(--bg-progressbar);
+  }
+  ::-webkit-progress-value {
+      background-color: var(--accent);
+  }
+  
 
 
 
