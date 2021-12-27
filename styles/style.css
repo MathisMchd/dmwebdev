@@ -50,7 +50,6 @@ html {
     margin-left: 31px;
     width: 414px;
     height: 1px;
-    
 }
 
 /* Span violet */
@@ -77,12 +76,18 @@ html {
 .double-border {
     border-top: 1px solid var(--border-line);
 }
-
+/* text align */
 .text-align-end {
     text-align: end;
 }
 .text-align-start {
     text-align: start;
+}
+
+/* ============== font face ========== */
+.name {
+    font-family: 'Roboto ';
+    font-size: 26px;
 }
 
  /* ====== NAV BAR ====== */
@@ -98,12 +103,6 @@ html {
     align-items: center;
 }
 
-
-/* ============== font face ========== */
-.name {
-    font-family: 'Roboto ';
-    font-size: 26px;
-}
 
 .nav_links {
     list-style: none;
@@ -154,14 +153,14 @@ html {
     padding-bottom: 144px;
     text-align: center;
 }
-.description {
+.personal-description .description {
     margin: 0 auto;
     max-width: 609px;
 }
-.description > h1 {
+.personal-description .description > h1 {
     margin-bottom: 29px;
 }
-.description > p {
+.personal-description .description > p {
    line-height: 30px;
 }
 
@@ -169,15 +168,19 @@ html {
 /* ==== EXPERIENCE ====*/
 
 .experience .container {
+    max-width: 247px;
     padding-top: 120px;
+    margin: 0 auto;
 }
 
 .experience .container .component {
     display: grid;
+    grid-template-columns: 27px 91px 245px;
+    grid-template-rows: 91px ;
     grid-template-areas:
-    "deco date content1"
-    "deco date content2";   
-    justify-content: center;
+    "deco date content1 content1"
+    "deco date content2 content2";   
+    
 }
 
 .experience .container .component .decoration {
@@ -207,20 +210,37 @@ html {
 /* ===== SKILLS ====== */
 
 .skills .skills-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    gap: 51px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     justify-content: center;
 }
 
+
+.skills .skills-container .left,
+.skills .skills-container .right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 19px;
+}
+.skills .skills-container .bar-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
 progress {
     -webkit-appearance: none;
     height: 8px;
+    width: 334px;
 }
 progress::-webkit-progress-bar {
     border-radius: 100px;
     background-color: var(--bg-progressbar);
   }
   ::-webkit-progress-value {
+      border-radius: 100px;
       background-color: var(--accent);
   }
   
@@ -228,4 +248,75 @@ progress::-webkit-progress-bar {
 
 
 
+
 /* ===== Education ===== */ 
+.education {
+    background-color: var(--blue-4);
+}
+.education .container {
+    margin: 0 auto;
+    display: flex;
+    gap: 31px;
+    max-width: 1343px;
+    padding: 120px 0 120px 0;
+}
+
+.education .container .component {
+    display: flex;
+    flex-direction: column;
+    row-gap: 19px;
+}
+.education .container .component .decoration {
+    display: flex;
+    align-items: center;
+}
+
+.education .container .component:last-child .decoration .line02 {
+    max-width: 199px;
+}
+
+.education .container .component .description {
+    max-width: 373px;
+}
+
+
+/* ====== PROJECTS ===== */
+
+.projects .container {
+    max-width: 1158px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    margin: 0 auto;
+    padding: 95px 0 120px 0;
+}
+
+.projects .container .ps5-img {
+    opacity: 1;
+    position: relative;
+}
+.projects .container .ps5-img .overlay {
+    position: absolute;
+    height: 100%;
+    bottom: 0px;
+    background: var(--accent);
+    filter: opacity(0.9);
+    border-radius: 11px;
+}
+
+.projects .container .ps5-img .overlay-content {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    color: #FFFFFF;
+    padding-left: 22px;
+    padding-right:99px;
+}
+
+/* ===== CONTACT ===== */
+
+
+
+@media screen and (max-width: 500px){
+    
+}
