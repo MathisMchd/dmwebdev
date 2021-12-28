@@ -139,7 +139,10 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 30px;
+}
+.phone,
+.email {
+    width: 10em;
 }
 
 
@@ -168,7 +171,7 @@ html {
 /* ==== EXPERIENCE ====*/
 
 .experience .container {
-    max-width: 247px;
+    max-width: 380px;
     padding-top: 120px;
     margin: 0 auto;
 }
@@ -176,26 +179,34 @@ html {
 .experience .container .component {
     display: grid;
     grid-template-columns: 27px 91px 245px;
-    grid-template-rows: 91px ;
+    grid-template-rows: 61px;
     grid-template-areas:
-    "deco date content1 content1"
-    "deco date content2 content2";   
-    
+    "deco date content1 "
+    "deco . content2"
+    "deco . content3";   
 }
 
 .experience .container .component .decoration {
     grid-area: deco;
 }
-.experience .container .component .date {
 
+.experience .container .component .decoration .dot {
+    margin-top: 8px;
+}
+
+.experience .container .component .date {
     grid-area: date;
 }
 .experience .container .component .name-job {
     grid-area: content1;
 }
 
-.experience .container .component .description-job {
+.experience .container .component .platform {
     grid-area: content2;
+}
+
+.experience .container .component .description-job {
+    grid-area: content3;
 }
 
 .experience .container .component:last-child .line02 {
@@ -291,32 +302,133 @@ progress::-webkit-progress-bar {
     padding: 95px 0 120px 0;
 }
 
+.projects .container > * {
+    cursor: pointer;
+}
+
 .projects .container .ps5-img {
-    opacity: 1;
     position: relative;
 }
 .projects .container .ps5-img .overlay {
     position: absolute;
     height: 100%;
-    bottom: 0px;
+    width: 100%;
+    inset:0;
     background: var(--accent);
     filter: opacity(0.9);
     border-radius: 11px;
+    transition: 0.250s ease;
+    opacity: 0;
+}
+.projects .container .ps5-img:hover .overlay {
+    opacity: 1;
 }
 
 .projects .container .ps5-img .overlay-content {
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-end; */
+    bottom: 0;
     color: #FFFFFF;
     padding-left: 22px;
     padding-right:99px;
+    transform: translateY(150%);
 }
 
 /* ===== CONTACT ===== */
 
+.contact .container {
+    max-width: 1158px;
+    padding: 120px 0 167px 0;
+    margin: 0 auto;
+}
+.contact .container .form {
+    display: grid;
+    gap: 24px 48px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "civ name name name"
+    "ad  ad   ad   ad"
+    "tit tit  tit  tit"
+    "msg msg  msg  msg";
+}
+.contact .container .form input {
+    width: 100%;
+    height: 59px;
+}
 
+.icon-arrow {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: url(../icon/Icon-Arrow-down.svg) no-repeat;
+}
+.contact .container .form .civilite {
+    grid-area: civ;
+}
+
+.contact .container .form .user-name {
+    grid-area: name;
+}
+
+.contact .container .form .mail {
+    grid-area: ad;
+}
+
+.contact .container .form .msg-title {
+    grid-area: tit;
+}
+
+.contact .container .form .msg {
+    grid-area: msg;
+}
+
+
+
+
+select::-ms-expand {
+    display: none;
+}
+
+
+
+.input-list::-webkit-calendar-picker-indicator {
+    display: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.icon::after {
+    position: absolute;
+    content: ' ';
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    transform: translateY(125%);
+}
+
+
+.error-msg {
+    opacity: 0;
+}
+
+
+
+input:invalid+span::after{
+    background: url("../icon/Icon-warning.svg") no-repeat;
+}
+
+
+
+
+
+
+
+input:disabled+span::after {
+    background-image: url(../icon/Icon-lock.svg);
+}
 
 @media screen and (max-width: 500px){
     
 }
+
+/* ============== LINE DES TITLE DES SECTIONS, taille ========== */

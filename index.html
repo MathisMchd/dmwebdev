@@ -36,12 +36,12 @@
                 <img class="image-head" src="img/illustrationhead.svg" alt="dessin d'une tête de presonnage">
             </div>
             <article class="information">
-                <div class="text-align-end">
+                <div class="phone text-align-end">
                     <h3>Phone</h3>
                     <p>052-4870-563</p>
                 </div>
                 <span class="line02 short-line"></span>
-                <div class="text-align-start">
+                <div class="email text-align-start">
                     <h3>Email</h3>
                     <p>maria@gmail.com</p>
                 </div>
@@ -75,10 +75,13 @@
                     </div>
                     <div class="name-job">
                         <p>Full stack developer</p>
+        
+                    </div>
+                    <div class="platform">
                         <h3>Wix</h3>
                     </div>
                     <div class="description-job">
-                        
+
                         <p>Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla
                             pari. Excepteur sint occana inna tecat cupidatat non proident.</p>
                     </div>
@@ -96,7 +99,7 @@
                         <p>Full stack developper</p>
                         <h3>Google</h3>
                     </div>
-                    
+
                     <div class="description-job">
                         <p>Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla
                             pari. Excepteur sint occana inna tecat cupidatat non proident.</p>
@@ -105,7 +108,7 @@
 
                 <div class="component">
                     <div class="date">
-                        <h3>2004  -  2008</h3>
+                        <h3>2004 - 2008</h3>
                     </div>
                     <div class="name-job">
                         <p>Full stack developer</p>
@@ -133,7 +136,7 @@
                         <div class="bar-content">
                             <progress id="progress-bar" max="100" value="80"></progress>
                             <label>80%</label>
-                        </div> 
+                        </div>
                     </div>
                     <div>
                         <h3>Team Leading</h3>
@@ -210,10 +213,11 @@
                         <h3>UNIVERSITY OF NORTH CAROLINA</h3>
                     </div>
                     <div class="description">
-                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident.
+                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla
+                        pari. Excepteur sint occana inna tecat cupidatat non proident.
                     </div>
                 </div>
-                
+
 
                 <div class="component">
                     <div class="date">
@@ -230,7 +234,8 @@
                         <h3>UNIVERSITY OF BOSTON</h3>
                     </div>
                     <div class="description">
-                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident.
+                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla
+                        pari. Excepteur sint occana inna tecat cupidatat non proident.
                     </div>
                 </div>
 
@@ -250,7 +255,8 @@
                         <h3>UNIVERSITY OF NORTH CAROLINA</h3>
                     </div>
                     <div class="description">
-                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla pari. Excepteur sint occana inna tecat cupidatat non proident.
+                        Duis aute irure dolor in reprehenderit in vol patate velit esse cillum dolore eu fugiat nulla
+                        pari. Excepteur sint occana inna tecat cupidatat non proident.
                     </div>
                 </div>
             </div>
@@ -269,27 +275,67 @@
                             <h1>Playstation 5</h1>
                             <p>High-end, custom residential renovaters serving Fraser Valley homeowners.</p>
                         </div>
-                       
                     </div>
                 </div>
                 <img src="img/keyboard.svg" alt="keyboard">
             </div>
         </section>
         <section class="contact">
-            <h1 class="title-section-contact">Contact me</h1>
+            <h1 class="title-section double-border">Contact me</h1>
             <div class="container">
+                <form class="form" method="post">
+                    <div class="civilite">
+                        <label for="genre">Civilité</label>
+                        <div>
+                            <span class="icon-arrow"></span>
+                            <input class="input-list" type="text" name="civilite" id="civilite" placeholder="" required list="propositions-civilite" aria-required="true" />
+                            <span class="icon"></span>
+                        </div>
+                        <span class="error-msg">aaaaaa</span>
+                        <datalist id="propositions-civilite">
+                            <option>Homme</option>
+                            <option>Femme</option>
+                            <option>Autre</option>
+                        </datalist>
 
+                    </div>
+                    <div class="user-name">
+                        <label for="user-name">Prénom Nom</label>
+                        <div>
+                            <input type="text" id="user-name" required pattern="\S+">
+                            <span class="icon"></span>
+                        </div>
+                        <span class="error-msg">aaaaaaaaa</span>
+                    </div>
+                    <div class="mail">
+                        <div>
+                            <label for="mail">Adresse email</label>
+                            <input type="text" id="mail" placeholder="" required pattern="\S+">
+                            <span class="icon"></span>
+                        </div>
+                        <span class="error-msg">aaaaaaaaaaa</span>
 
+                    </div>
+                    <div class="msg-title">
+                        <div>
+                            <label for="msg-title">Titre du message</label>
+                            <input type="text" id="msg-title" required pattern="\S+">
+                            <span class="icon"></span>
+                        </div>
+                        <span class="error-msg">aaaaaaaaaaaaa</span>
 
+                    </div>
+                    <div class="msg">
+                        <div>
+                            <label for="msg">Votre message</label>
+                            <input type="text" id="msg" required pattern="\S+" >
+                            <span class="icon"></span>
+                        </div>
+                        <span class="error-msg">aaaaaaa</span>
 
-
-
-
-
-
-
-
-
+                    </div>
+                </form>
+                <button class="send-buttton">Envoyer</button>
             </div>
         </section>
         <section class="footer">
