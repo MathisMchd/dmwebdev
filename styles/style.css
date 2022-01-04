@@ -12,6 +12,8 @@
     --blue-3:#DCDCDE;
     --blue-4:#F9FBFD;
     --blue-5:#1D274F;
+    --burple-100:#2407D8;
+    --burple-200:#5034FF;
     --border-line:#E5EBF2;
     --bg-progressbar: #DFE5EB;
     --clr-contact-txt:rgb(26, 26, 26);
@@ -25,14 +27,19 @@
     --blue-2:#F9FBFD;
     --blue-3:#DCDCDE;
     --blue-4:#1D274F;
+    --blue-5:#1D274F;
+    --burple-100:#2407D8;
+    --burple-200:#5034FF;
     --border-line:#E5EBF2;
-    --bg-progressbar: #DFE5EB;
+    --bg-progressbar: #535E88 ;
+    --clr-contact-txt:hsla(210, 50%, 98%, 1);
+    ;
 }
 
-/* )))))))))))))))))))))))))))))))))))))))))))))))))))))))))a finiir */
 html {
     scroll-behavior: smooth;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    font-display: swap;
 }
 body {
     background-color: var(--bg-page);
@@ -72,14 +79,9 @@ body {
 
 /* Span violet */
 .violet {
-    font-weight: 900;
     color: var(--accent);
 }
-.myname {
-    font-weight: 900;
-    font-size: 26px;
-    color: var(--blue-1);
-}
+
 
 /* == TITLE == */
 .title01 {
@@ -94,6 +96,17 @@ body {
     font-size: 26px;
     line-height: 30px;
     color: var(--blue-1);
+}
+.title02-white {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 30px;
+    color: var(--white);
+}
+.title03 {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .title-section {
@@ -130,6 +143,13 @@ body {
     font-size: 17px;
     line-height: 30px;
     color: var(--blue-2);
+}
+
+.paragraph04 {
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--clr-contact-txt);
 }
 
 /*  double border of title-section  */
@@ -345,6 +365,10 @@ progress::-webkit-progress-bar {
     width: 360px;
     margin-left: 31px;
 }
+.education .container .job, 
+.education .container .description{
+    margin-top: 13px; 
+}
 
 
 
@@ -398,28 +422,20 @@ progress::-webkit-progress-bar {
     margin: 0 auto;
 }
 .contact .container .form {
+    padding-bottom: 24px;
     display: grid;
     gap: 24px 48px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 261 repeat(3, 1fr);
     grid-template-areas: 
     "civ name name name"
     "ad  ad   ad   ad"
     "tit tit  tit  tit"
     "msg msg  msg  msg";
 }
-.contact .container .form input {
-    width: 100%;
-    height: 59px;
-}
 
-.icon-arrow {
-    position: absolute;
-    width: 17px;
-    height: 17px;
-    background: url(../icon/Icon-Arrow-down.svg) no-repeat;
-}
 .contact .container .form .civilite {
     grid-area: civ;
+    position: relative;
 }
 
 .contact .container .form .user-name {
@@ -438,48 +454,117 @@ progress::-webkit-progress-bar {
     grid-area: msg;
 }
 
-
-
-
-select::-ms-expand {
-    display: none;
+.contact .container .form input {
+    width: 100%;
+    height: 59px;
 }
 
+.contact .container .form textarea {
+    width: 100%;
+    height: 230px;
+}
 
+.contact .container .form .icon-input {
+    display: flex;
+    align-items: center;
+}
 
-.input-list::-webkit-calendar-picker-indicator {
+select {
     display: none;
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
+input::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
 
-.icon::after {
+.icon-arrow {
     position: absolute;
+    right: 13px;
     content: ' ';
     width: 17px;
     height: 17px;
+    background: url(../icon/Icon-Arrow-down.svg) no-repeat;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.icon::after {
+    transform: translateY(-50%);
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 17px;
     margin-left: 8px;
-    transform: translateY(125%);
 }
 
 
-.error-msg {
-    opacity: 0;
+/* -- contact style -- */
+
+.contact label:after {
+    content: ' * ';
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    border-radius: 4px;
+    border: 1px solid hsla(0, 0%, 58%, 1);
+    padding: 20px 12px 20px 12px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+    transition: 125ms e;
 }
 
 
+input:not(:focus):hover, 
+textarea:not(:focus):hover {
+    border: 2px solid hsla(0, 0%, 46%, 1);
+}
 
-input:invalid+span::after{
-    background: url("../icon/Icon-warning.svg") no-repeat;
+input:focus, 
+textarea:focus {
+    border: 1px solid #5640d4;
+}
+
+span.error-msg {
+    color: #EE0004;
 }
 
 
-input:disabled+span::after {
-    background-image: url(../icon/Icon-lock.svg);
+input:disabled+span::after,
+textarea:disabled+span::after {
+    background: url(../icon/Icon-lock.svg) no-repeat ;
 }
 
+input:not(:placeholder-shown):invalid+span::after {
+    background: url(../icon/Icon-warning.svg) no-repeat;    
+}
+input:invalid span.error-msg {
+    background-color: limegreen;
+}
+
+.contact .container button {
+    width: 130px;
+    height: 70px;
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    transition: all ease-in-out 125ms;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--burple-200);
+    border: none;
+}
+.contact .container button:hover,
+.contact .container button:focus {
+    background-color: var(--burple-100);
+}
 
 
 /* ===== FOOTER ===== */
@@ -493,78 +578,90 @@ input:disabled+span::after {
 }
 .footer .lien-cv {
     text-decoration: underline;
+    color: var(--accent);
 }
 
-
+/* =====================++++++++++++++++++++++++++++======ERRROORRR MESSAGEEE ++++++++++++++++++++++++++++  */
 
 
 /*  ====================== MEDIA ====================== */
 
+/* ======= BREAK POINT ======= */
+
 @media screen and (max-width:1250px) {
- .education .container {
-     flex-direction: column;
-     max-width: 450px;
- }
+    .education .container {
+        flex-direction: column;
+        max-width: 450px;
+    }
 
- .education .container .component {
-    display: grid;
-    grid-template-columns: 9px 95px 350px;
-    grid-auto-rows: 35px 35px 270px;
-}
+    .education .container .component {
+        display: grid;
+        grid-template-columns: 9px 105px 350px;
+        grid-auto-rows: 35px 35px 270px;
+    }
 
-.education .container .component .decoration {
-    display: initial;
-    margin: 0 auto;
-    padding: 0;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
+    .education .container .component .decoration {
+        display: initial;
+        margin: 0 auto;
+        padding: 0;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
 
-.education .container .component .decoration .dot {
-    margin-top: 10px;
-}
-.education .container .component .decoration .line02 {
-    width: 1px;
-    height: 224px;
-    margin: 0 auto;
-    margin-top: 15px;
-}
+    .education .container .component .decoration .dot {
+        margin-top: 10px;
+    }
+    .education .container .component .decoration .line02 {
+        width: 1px;
+        height: 224px;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
 
-.education .container .component .date {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    margin: 0 15px 0 20px
-}
+    .education .container .component .date {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        padding: 0 15px 0 20px;
+    }
 
-.education .container .component .job {
-    grid-column-start: 3;
-    grid-row-start: 1;
-    
-}
+    .education .container .component .job {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        
+    }
 
-.education .container .component .place {
-    grid-column-start: 3;
-    grid-row-start: 2;
-}
+    .education .container .component .place {
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
 
-.education .container .component .description {
-    grid-column-start: 3;
-    grid-row-start: 3;
-}
+    .education .container .component .description {
+        grid-column-start: 3;
+        grid-row-start: 3;
+    }
 }
 
 @media screen and (max-width:900px) {
+    /* ==== SKIL ===== */
     .skills .skills-container {
         flex-direction: column;
         max-width: 380px;
         gap: 19px;
         margin: 0 auto;
     }
+
 }
 
-
+@media screen and (max-width:750px) {
+    .nav_links {
+        display: none;
+    }
+    .nav-content {
+        justify-content: center;
+    }
+}
 
 
 /* ------ MOBILE ------ */
@@ -615,8 +712,15 @@ input:disabled+span::after {
         grid-row-start: 3;
     }
 
-    /* ===== EDUCATION ===== */
-
+    /* ==== CONTACT ==== */
+    .contact .container .form {
+        grid-template-areas: 
+        "civ civ civ civ"
+        "name name name name"
+        "ad  ad   ad   ad"
+        "tit tit  tit  tit"
+        "msg msg  msg  msg";
+    }
     
     
 }
