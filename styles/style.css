@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --bg-page:#FFFFFF;
     --white: #FFFFFF;
@@ -45,9 +46,13 @@ body {
     background-color: var(--bg-page);
 }
 
+
+
 /* ==== decoration ==== */
 
 .dot {
+    -webkit-print-color-adjust: exact;
+
     display: block;
     width: 9px;
     height: 9px;
@@ -55,7 +60,8 @@ body {
     background-color: var(--accent);
 }
 
-.line02 {
+.line {
+    -webkit-print-color-adjust: exact;
     display: block;
     width: 1px;
     height: 1px;
@@ -293,7 +299,7 @@ body {
     grid-row-start: 2;
 }
 
-.experience .container .component:last-child .line02 {
+.experience .container .component:last-child .line {
     background: none;
 }
 
@@ -331,13 +337,13 @@ progress {
     width: 334px;
 }
 progress::-webkit-progress-bar {
-    border-radius: 100px;
     background-color: var(--bg-progressbar);
-  }
-  ::-webkit-progress-value {
-      border-radius: 100px;
-      background-color: var(--accent);
-  }
+    border-radius: 100px;
+}
+progress::-webkit-progress-value {
+    border-radius: 100px;
+    background-color: var(--accent);
+}
   
 
 
@@ -361,7 +367,7 @@ progress::-webkit-progress-bar {
     align-items: center;
     padding: 35px 0px 35px 0;
 }
-.education .container .decoration .line02 {
+.education .container .decoration .line {
     width: 360px;
     margin-left: 31px;
 }
@@ -464,24 +470,21 @@ progress::-webkit-progress-bar {
     height: 230px;
 }
 
-.contact .container .form .icon-input {
-    display: flex;
-    align-items: center;
-}
+/* civilite arrow icon */
 
-select {
+.contact .container .form select {
     display: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-input::-webkit-calendar-picker-indicator {
+.contact .container .form input::-webkit-calendar-picker-indicator {
     display: none !important;
 }
 
-.icon-arrow {
+.contact .container .form .icon-arrow {
     position: absolute;
-    right: 13px;
+    right: 38px;
     content: ' ';
     width: 17px;
     height: 17px;
@@ -490,25 +493,20 @@ input::-webkit-calendar-picker-indicator {
     pointer-events: none;
 }
 
-.icon::after {
-    transform: translateY(-50%);
-    position: absolute;
-    content: '';
-    width: 16px;
-    height: 17px;
-    margin-left: 8px;
+/* contact input and label */
+
+.contact .container .form .icon-input {
+    display: flex;
+    align-items: center;
 }
-
-
-/* -- contact style -- */
 
 .contact label:after {
     content: ' * ';
 }
 
-input[type=text],
-input[type=email],
-textarea {
+.contact .container .form input[type=text],
+.contact .container .form input[type=email],
+.contact .container .form textarea {
     border-radius: 4px;
     border: 1px solid hsla(0, 0%, 58%, 1);
     padding: 20px 12px 20px 12px;
@@ -519,32 +517,41 @@ textarea {
 }
 
 
-input:not(:focus):hover, 
-textarea:not(:focus):hover {
+.contact .container .form input:not(:focus):hover,
+.contact .container .form textarea:not(:focus):hover {
     border: 2px solid hsla(0, 0%, 46%, 1);
 }
 
-input:focus, 
-textarea:focus {
+.contact .container .form input:focus, 
+.contact .container .form textarea:focus {
     border: 1px solid #5640d4;
 }
 
-span.error-msg {
-    color: #EE0004;
+/* .error-msg {
+    opacity: 1;
+} */
+
+/* input error or disabled */
+
+.contact .container .form .icon {
+    display: inline-block;
+    opacity: 0;
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    background: url(../icon/Icon-warning.svg) no-repeat;
 }
 
 
-input:disabled+span::after,
-textarea:disabled+span::after {
-    background: url(../icon/Icon-lock.svg) no-repeat ;
+.contact .container .form input:not(:placeholder-shown):invalid {
+    border: 1px solid red;
 }
 
-input:not(:placeholder-shown):invalid+span::after {
-    background: url(../icon/Icon-warning.svg) no-repeat;    
+.contact .container .form input:not(:placeholder-shown):invalid + .icon {
+    border: 1px solid red;
 }
-input:invalid span.error-msg {
-    background-color: limegreen;
-}
+
+/* contact button */
 
 .contact .container button {
     width: 130px;
@@ -581,7 +588,6 @@ input:invalid span.error-msg {
     color: var(--accent);
 }
 
-/* =====================++++++++++++++++++++++++++++======ERRROORRR MESSAGEEE ++++++++++++++++++++++++++++  */
 
 
 /*  ====================== MEDIA ====================== */
@@ -612,7 +618,7 @@ input:invalid span.error-msg {
     .education .container .component .decoration .dot {
         margin-top: 10px;
     }
-    .education .container .component .decoration .line02 {
+    .education .container .component .decoration .line {
         width: 1px;
         height: 224px;
         margin: 0 auto;
@@ -721,8 +727,16 @@ input:invalid span.error-msg {
         "tit tit  tit  tit"
         "msg msg  msg  msg";
     }
-    
-    
 }
 
-/* ============== LINE DES TITLE DES SECTIONS, taille ========== */
+@media print {
+    section {
+      break-inside: avoid;
+    }
+    nav, footer, .overlay {
+        display: none;
+    }
+    .footer, .education {
+        background-color: var(--bg-page);
+    }
+  }

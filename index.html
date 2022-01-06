@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" media="all" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet">
 
     <title>Maquette devoir - Michenaud Mathis</title>
 </head>
-
+<!-- body class="dark" -->
 <body class="dark">
+    <!-- ====== NAV ====== -->
     <header>
         <div class="nav-content">
             <h1 class="title02">Maria Hill</h1>
@@ -44,7 +45,7 @@
                     <h3 class="paragraph02">Phone</h3>
                     <p class="paragraph03">052-4870-563</p>
                 </div>
-                <span class="line02 short-line"></span>
+                <span class="line short-line"></span>
                 <div class="email text-align-start">
                     <h3 class="paragraph02">Email</h3>
                     <p class="paragraph03">maria@gmail.com</p>
@@ -72,7 +73,7 @@
                 <div class="component">
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02 long-line"></span>
+                        <span class="line long-line"></span>
                     </div>
                     <div class="date text-align-end">
                         <h3 class="paragraph02">2010 - Present</h3>
@@ -93,7 +94,7 @@
                 <div class="component">
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02 long-line"></span>
+                        <span class="line long-line"></span>
                     </div>
                     <div class="date text-align-end">
                         <h3 class="paragraph02">2008 - 2010</h3>
@@ -114,7 +115,7 @@
                 <div class="component">
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02 long-line"></span>
+                        <span class="line long-line"></span>
                     </div>
                     <div class="date text-align-end">
                         <h3 class="paragraph02">2004 - 2008</h3>
@@ -216,7 +217,7 @@
                     </div>
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02"></span>
+                        <span class="line"></span>
                     </div>
                     <div class="place">
                         <h3 class="paragraph02">UNIVERSITY OF NORTH CAROLINA</h3>
@@ -237,7 +238,7 @@
                     </div>
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02"></span>
+                        <span class="line"></span>
                     </div>
                     <div class="place">
                         <h3 class="paragraph02">UNIVERSITY OF BOSTON</h3>
@@ -258,7 +259,7 @@
                     </div>
                     <div class="decoration">
                         <span class="dot"></span>
-                        <span class="line02"></span>
+                        <span class="line"></span>
                     </div>
                     <div class="place">
                         <h3 class="paragraph02">UNIVERSITY OF NORTH CAROLINA</h3>
@@ -343,55 +344,57 @@
             <h1 class="title-section title02 double-border">Contact me</h1>
             <div class="container">
                 <form class="form" method="post">
+
                     <div class="civilite">
                         <label class="paragraph04" for="genre">Civilité</label>
                         <div class="icon-input">
                             <span class="icon-arrow"></span>
-                            <input class="input-list" type="text" name="civilite" id="civilite"  required
+                            <input class="input-list" type="text" name="civilite" id="civilite" placeholder=" " required
                                 list="propositions-civilite" aria-required="true" />
                             <span class="icon"></span>
                         </div>
-                        <span class="error-msg"></span>
+                        <!-- <span class="error-msg"></span> -->
                         <datalist id="propositions-civilite">
                             <option>Homme</option>
                             <option>Femme</option>
                             <option>Autre</option>
                         </datalist>
                     </div>
+
                     <div class="user-name">
                         <label class="paragraph04" for="user-name">Prénom Nom</label>
                         <div class="icon-input">
-                            <input type="text" id="user-name" placeholder=" " required minlength="3" maxlength="100">
+                            <input type="text" id="user-name" placeholder=" " pattern="[a-zA-Z]+[ ][a-zA-Z]+" required minlength="5" maxlength="50">
                             <span class="icon"></span>
                         </div>
-                        <span class="error-msg">Please enter your Name and FirstName</span>
+                        <!-- <label class="error-msg">Please enter your Name and FirstName</label> -->
                     </div>
+
                     <div class="mail">
                         <label class="paragraph04" for="mail">Adresse email</label>
                         <div class="icon-input">
                             <input type="email" id="mail" placeholder=" " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                             <span class="icon"></span>
                         </div>
-                        <span class="error-msg">Please enter your email address (example@mail.com)</span>
-
+                        <!-- <span class="error-msg">Veuillez entrer une adresse mail valide (example@mail.com)</span> -->
                     </div>
+
                     <div class="msg-title">
                         <label class="paragraph04" for="msg-title">Titre du message</label>
                         <div class="icon-input">
                             <input type="text" id="msg-title" placeholder=" " required minlength="2">
                             <span class="icon"></span>
                         </div>
-                        <span class="error-msg"></span>
-
+                        <!-- <span class="error-msg">Veuillez entrer un titre pour le message</span> -->
                     </div>
+
                     <div class="msg">
                         <label class="paragraph04" for="msg">Votre message</label>
                         <div class="icon-input">
                             <textarea id="msg" required  placeholder=" " ></textarea>
                             <span class="icon"></span>
                         </div>
-                        <span class="error-msg"></span>
-
+                        <!-- <span class="error-msg">Veuillez saisir votre message</span> -->
                     </div>
                 </form>
                 <button class="send-buttton">Envoyer</button>
