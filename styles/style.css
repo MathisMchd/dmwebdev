@@ -80,7 +80,7 @@ body {
 }
 
 
-/* ====== TYPOGRAPHIE ====== */
+/* ============= TYPOGRAPHIE ============ */
 
 /* Span violet */
 .violet {
@@ -95,7 +95,6 @@ body {
     line-height: 60px;
     color: var(--blue-1);
 }
-
 .title02 {
     font-weight: 900;
     font-size: 26px;
@@ -113,7 +112,6 @@ body {
     font-size: 16px;
     line-height: 30px;
 }
-
 .title-section {
     text-align: center;
     padding-top: 48px;
@@ -149,7 +147,6 @@ body {
     line-height: 30px;
     color: var(--blue-2);
 }
-
 .paragraph04 {
     font-weight: 300;
     font-size: 17px;
@@ -157,13 +154,14 @@ body {
     color: var(--clr-contact-txt);
 }
 
-/*  double border of title-section  */
 
+/*  double border of title-section  */
 .double-border {
     border-top: 1px solid var(--border-line);
 }
-/* text align */
 
+
+/* text align */
 .text-align-center {
     text-align: center;
 }
@@ -175,12 +173,14 @@ body {
 }
 
 
+
  /* ====== NAV BAR ====== */
+
  header {
     padding: 50px 0px;
     border-bottom: 1px solid var(--border-line);
- }
-.nav-content {
+}
+header .nav-content {
     max-width: 976px;
     margin: 0 auto;
     display: flex;
@@ -188,24 +188,26 @@ body {
     align-items: center;
 }
 
-
-.nav_links {
+header .nav_links {
     list-style: none;
 }
 
-.nav_links li {
+header .nav_links li {
     display: inline-block;
     padding: 0px 30px;
 }
 
-.nav_links li, a {
+header .nav_links li, a {
     text-decoration: none;
     color: var(--blue-1);
     transition: all 0.25s ease-in-out;
 }
-.nav_links li a:hover {
+
+header .nav_links li a:hover {
     color:var(--accent)
 }
+
+
 
 /* ===== PERSONAL INTRODUCTION ====== */
 .personal-intro {
@@ -216,24 +218,25 @@ body {
     text-align: center;
     margin: 0 28px 0 28px;
 }
-.image-head {
+.personal-intro .introduction .image-head {
     margin-top: 80px;
 }
-.information {
+.personal-intro .information {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.phone,
-.email {
+.personal-intro .information .phone,
+.personal-intro .information .email {
     width: 10em;
 }
- .phone {
+.personal-intro .information .phone {
      text-align: end;
  }
-.email {
+ .personal-intro .information .email {
     text-align: start;
 }
+
 
 
 /* ==== PERSONAL DESCRIPTION ==== */
@@ -310,8 +313,6 @@ body {
 
 
 
-
-
 /* ===== SKILLS ====== */
 
 .skills .skills-container {
@@ -341,10 +342,12 @@ progress {
     height: 6px;
     width: 467px;
 }
+
 progress::-webkit-progress-bar {
     background-color: var(--bg-progressbar);
     border-radius: 100px;
 }
+
 progress::-webkit-progress-value {
     border-radius: 100px;
     background-color: var(--accent);
@@ -378,7 +381,6 @@ progress::-webkit-progress-value {
 .education .container .description{
     margin-top: 13px; 
 }
-
 
 
 /* ====== PROJECTS ===== */
@@ -496,8 +498,8 @@ progress::-webkit-progress-value {
     pointer-events: none;
 }
 
-/* contact input and label */
 
+/* contact input and label */
 
 .contact label:after {
     content: ' * ';
@@ -507,7 +509,6 @@ progress::-webkit-progress-value {
     display: flex;
     align-items: center;
 }
-
 
 .contact .container .form input[type=text],
 .contact .container .form input[type=email],
@@ -680,6 +681,7 @@ progress::-webkit-progress-value {
 
 
 /* ------ MOBILE ------ */
+
 @media screen and (max-width: 500px) {
 
     /* remove text align */
@@ -688,7 +690,7 @@ progress::-webkit-progress-value {
         text-align: initial;
     }
 
-    /* ==== EXPERIENCE ==== */
+    /* ====== EXPERIENCE ====== */
 
     .experience .container {
         max-width: 380px;
@@ -727,7 +729,7 @@ progress::-webkit-progress-value {
         grid-row-start: 3;
     }
 
-    /* ==== CONTACT ==== */
+    /* ====== CONTACT ====== */
     .contact .container .form {
         grid-template-areas: 
         "civ civ civ civ"
@@ -739,23 +741,16 @@ progress::-webkit-progress-value {
 }
 
 @media print {
+
     section {
       break-inside: avoid;
     }
+
     nav, footer {
         display: none;
         position: initial;
     }
 
-
-    /* .projects .container .element:hover .overlay {
-        display: none;
-        position: absolute;
-    }
-    .projects .container .element .overlay-content {
-        display: none;
-        position: absolute;
-    } */
     .footer, .education {
         background-color: var(--bg-page);
     }
