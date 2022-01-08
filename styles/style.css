@@ -52,7 +52,6 @@ body {
 
 .dot {
     -webkit-print-color-adjust: exact;
-
     display: block;
     width: 9px;
     height: 9px;
@@ -229,8 +228,12 @@ body {
 .email {
     width: 10em;
 }
-
-
+ .phone {
+     text-align: end;
+ }
+.email {
+    text-align: start;
+}
 
 
 /* ==== PERSONAL DESCRIPTION ==== */
@@ -301,6 +304,7 @@ body {
 
 .experience .container .component:last-child .line {
     background: none;
+    height: 125px;
 }
 
 
@@ -333,8 +337,9 @@ body {
  
 progress {
     -webkit-appearance: none;
-    height: 8px;
-    width: 334px;
+    -webkit-print-color-adjust: exact;  
+    height: 6px;
+    width: 467px;
 }
 progress::-webkit-progress-bar {
     background-color: var(--bg-progressbar);
@@ -347,10 +352,8 @@ progress::-webkit-progress-value {
   
 
 
-
-
-
-/* ===== Education ===== */ 
+/* ===== EDUCATION ===== */
+ 
 .education {
     background-color: var(--blue-4);
 }
@@ -395,7 +398,7 @@ progress::-webkit-progress-value {
 }
 
 .projects .container .element {
-    position: relative;
+    position: relative; 
 }
 .projects .container .element .overlay {
     position: absolute;
@@ -495,25 +498,28 @@ progress::-webkit-progress-value {
 
 /* contact input and label */
 
+
+.contact label:after {
+    content: ' * ';
+}
+
 .contact .container .form .icon-input {
     display: flex;
     align-items: center;
 }
 
-.contact label:after {
-    content: ' * ';
-}
 
 .contact .container .form input[type=text],
 .contact .container .form input[type=email],
 .contact .container .form textarea {
     border-radius: 4px;
     border: 1px solid hsla(0, 0%, 58%, 1);
+    margin-top: 6px;
     padding: 20px 12px 20px 12px;
     outline: none;
     font-weight: 400;
     font-size: 16px;
-    transition: 125ms e;
+    transition: all 125ms ease-in-out;
 }
 
 
@@ -531,7 +537,8 @@ progress::-webkit-progress-value {
     opacity: 1;
 } */
 
-/* input error or disabled */
+
+/* input and textarea : error or disabled */
 
 .contact .container .form .icon {
     display: inline-block;
@@ -543,24 +550,27 @@ progress::-webkit-progress-value {
 }
 
 
-.contact .container .form input:not(:placeholder-shown):invalid {
+.contact .container .form input:not(:placeholder-shown):invalid,
+.contact .container .form textarea:not(:placeholder-shown):invalid {
     border: 1px solid red;
 }
 
-.contact .container .form input:not(:placeholder-shown):invalid + .icon {
-    border: 1px solid red;
+.contact .container .form input:not(:placeholder-shown):invalid + .icon,
+.contact .container .form textarea:not(:placeholder-shown):invalid + .icon{
+    opacity: 1;
 }
 
 /* contact button */
 
 .contact .container button {
+    -webkit-print-color-adjust: exact;
     width: 130px;
     height: 70px;
     border-radius: 32px;
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
-    transition: all ease-in-out 125ms;
+    transition: all 125ms ease-in-out ;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
@@ -635,6 +645,7 @@ progress::-webkit-progress-value {
     .education .container .component .job {
         grid-column-start: 3;
         grid-row-start: 1;
+        margin-top: 0 ;
         
     }
 
@@ -647,9 +658,6 @@ progress::-webkit-progress-value {
         grid-column-start: 3;
         grid-row-start: 3;
     }
-}
-
-@media screen and (max-width:900px) {
     /* ==== SKIL ===== */
     .skills .skills-container {
         flex-direction: column;
@@ -657,8 +665,9 @@ progress::-webkit-progress-value {
         gap: 19px;
         margin: 0 auto;
     }
-
 }
+
+
 
 @media screen and (max-width:750px) {
     .nav_links {
@@ -733,9 +742,20 @@ progress::-webkit-progress-value {
     section {
       break-inside: avoid;
     }
-    nav, footer, .overlay {
+    nav, footer {
         display: none;
+        position: initial;
     }
+
+
+    /* .projects .container .element:hover .overlay {
+        display: none;
+        position: absolute;
+    }
+    .projects .container .element .overlay-content {
+        display: none;
+        position: absolute;
+    } */
     .footer, .education {
         background-color: var(--bg-page);
     }

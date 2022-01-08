@@ -13,7 +13,7 @@
     <title>Maquette devoir - Michenaud Mathis</title>
 </head>
 <!-- body class="dark" -->
-<body class="dark">
+<body>
     <!-- ====== NAV ====== -->
     <header>
         <div class="nav-content">
@@ -21,10 +21,10 @@
             <nav>
                 <ul class="nav_links">
                     <li><a href="#"><span class="title03 violet">About Me</span></a></li>
-                    <li><a class="paragraph01" href="#">Experience</a></li>
-                    <li><a class="paragraph01" href="#">Skills</a></li>
-                    <li><a class="paragraph01" href="#">Projects</a></li>
-                    <li><a class="paragraph01" href="#">Contact</a></li>
+                    <li><a class="paragraph01" href="#experience">Experience</a></li>
+                    <li><a class="paragraph01" href="#skills">Skills</a></li>
+                    <li><a class="paragraph01" href="#projects">Projects</a></li>
+                    <li><a class="paragraph01" href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,12 +41,12 @@
                 <img class="image-head" src="img/illustrationhead.svg" alt="dessin d'une tête de presonnage">
             </div>
             <article class="information">
-                <div class="phone text-align-end">
+                <div class="phone">
                     <h3 class="paragraph02">Phone</h3>
                     <p class="paragraph03">052-4870-563</p>
                 </div>
                 <span class="line short-line"></span>
-                <div class="email text-align-start">
+                <div class="email">
                     <h3 class="paragraph02">Email</h3>
                     <p class="paragraph03">maria@gmail.com</p>
                 </div>
@@ -58,8 +58,7 @@
             <div class="description">
                 <h1 class="title02">Hi,<span class="violet"> I’m Maria</span>. Nice to meet you.</h1>
                 <p class="paragraph03">Artificial intelligence (AI), sometimes called machine intelligence, is
-                    intelligence demonstrated
-                    by machines, unlike the natural intelligence displayed by humans and animals. Leading AI textbooks
+                    intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals. Leading AI textbooks
                     define the field as the study of "intelligent agents": any device that perceives its environment and
                     takes actions that maximize its chance of successfully achieving its goals.
                 </p>
@@ -67,7 +66,7 @@
 
         </section>
         <!-- Experiences -->
-        <section class="experience">
+        <section id="experience"class="experience">
             <h1 class="title-section title02">Experience</h1>
             <div class="container">
                 <div class="component">
@@ -138,7 +137,7 @@
         </section>
 
         <!-- Skills -->
-        <section class="skills">
+        <section id="skills" class="skills">
             <h1 class="title-section title02 double-border">Skills</h1>
             <div class="skills-container">
                 <div class="left">
@@ -205,7 +204,7 @@
         </section>
 
         <!-- ===== EDUCATION ===== -->
-        <section class="education">
+        <section id="education" class="education">
             <h1 class="title-section title02">Education</h1>
             <div class="container">
                 <div class="component">
@@ -273,7 +272,7 @@
         </section>
 
         <!-- ====== PROJECT ====== -->
-        <section class="projects">
+        <section  id="projects" class="projects">
             <h1 class="title-section title02">Projects</h1>
             <div class="container">
                 <div class="element">
@@ -340,7 +339,7 @@
         </section>
 
         <!-- ===== CONTACT ====== -->
-        <section class="contact">
+        <section id="contact" class="contact">
             <h1 class="title-section title02 double-border">Contact me</h1>
             <div class="container">
                 <form class="form" method="post">
@@ -391,7 +390,7 @@
                     <div class="msg">
                         <label class="paragraph04" for="msg">Votre message</label>
                         <div class="icon-input">
-                            <textarea id="msg" required  placeholder=" " ></textarea>
+                            <textarea id="msg" placeholder=" " required minlength="2"></textarea>
                             <span class="icon"></span>
                         </div>
                         <!-- <span class="error-msg">Veuillez saisir votre message</span> -->
