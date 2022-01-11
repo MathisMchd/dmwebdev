@@ -263,7 +263,7 @@ header .nav_links li a:hover {
 
 .experience .container {
     max-width: 938px;
-    padding: 120px 28px 10px 28px;
+    padding: 120px 28px 0px 28px;
     margin: 0 auto;
 }
 
@@ -436,7 +436,7 @@ progress::-webkit-progress-value {
     padding-bottom: 24px;
     display: grid;
     gap: 24px 48px;
-    grid-template-columns: 261 repeat(3, 1fr);
+    grid-template-columns: 261px repeat(3, 1fr);
     grid-template-areas: 
     "civ name name name"
     "ad  ad   ad   ad"
@@ -446,6 +446,8 @@ progress::-webkit-progress-value {
 
 .contact .container .form .civilite {
     grid-area: civ;
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
@@ -465,6 +467,7 @@ progress::-webkit-progress-value {
     grid-area: msg;
 }
 
+.contact .container .form select,
 .contact .container .form input {
     width: 100%;
     height: 59px;
@@ -475,29 +478,6 @@ progress::-webkit-progress-value {
     height: 230px;
 }
 
-/* civilite arrow icon */
-
-.contact .container .form select {
-    display: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.contact .container .form input::-webkit-calendar-picker-indicator {
-    display: none !important;
-}
-
-.contact .container .form .icon-arrow {
-    position: absolute;
-    right: 38px;
-    content: ' ';
-    width: 17px;
-    height: 17px;
-    background: url(../icon/Icon-Arrow-down.svg) no-repeat;
-    cursor: pointer;
-    pointer-events: none;
-}
-
 
 /* contact input and label */
 
@@ -505,25 +485,30 @@ progress::-webkit-progress-value {
     content: ' * ';
 }
 
+.contact .container .form select option:disabled {
+    color: #8e8e8e;
+}
+
 .contact .container .form .icon-input {
     display: flex;
     align-items: center;
 }
 
+.contact .container .form select,
 .contact .container .form input[type=text],
 .contact .container .form input[type=email],
 .contact .container .form textarea {
     border-radius: 4px;
     border: 1px solid hsla(0, 0%, 58%, 1);
     margin-top: 6px;
-    padding: 20px 12px 20px 12px;
+    padding: 2px 2px 2px 2px;
     outline: none;
     font-weight: 400;
     font-size: 16px;
     transition: all 125ms ease-in-out;
 }
 
-
+.contact .container .form select:hover,
 .contact .container .form input:not(:focus):hover,
 .contact .container .form textarea:not(:focus):hover {
     border: 2px solid hsla(0, 0%, 46%, 1);
@@ -533,10 +518,6 @@ progress::-webkit-progress-value {
 .contact .container .form textarea:focus {
     border: 1px solid #5640d4;
 }
-
-/* .error-msg {
-    opacity: 1;
-} */
 
 
 /* input and textarea : error or disabled */
@@ -551,16 +532,9 @@ progress::-webkit-progress-value {
 }
 
 
-.contact .container .form input:invalid {
-    border: 1px solid red;
-    color: red;
-}
 
-
-
-
-
-/* .contact .container .form input:not(:placeholder-shown):invalid,
+.contact .container .form select:invalid,
+.contact .container .form input:not(:placeholder-shown):invalid,
 .contact .container .form textarea:not(:placeholder-shown):invalid {
     border: 1px solid red;
 }
@@ -568,8 +542,13 @@ progress::-webkit-progress-value {
 .contact .container .form input:not(:placeholder-shown):invalid + .icon,
 .contact .container .form textarea:not(:placeholder-shown):invalid + .icon{
     opacity: 1;
-} */
+}
 
+.contact .container .form select:disabled + .icon,
+.contact .container .form input:disabled + .icon {
+    opacity: 1;
+    background: url(../icon/Icon-lock.svg) no-repeat;
+}
 /* contact button */
 
 .contact .container button {
@@ -699,10 +678,6 @@ progress::-webkit-progress-value {
         text-align: initial;
     }
 
-    .personal-description .description {
-        text-align: initial;
-        margin: 0 10px 0 10px;
-    }
     /* ====== EXPERIENCE ====== */
 
     .experience .container {
