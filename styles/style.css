@@ -263,7 +263,7 @@ header .nav_links li a:hover {
 
 .experience .container {
     max-width: 938px;
-    padding: 120px 28px 0px 28px;
+    padding: 120px 28px 10px 28px;
     margin: 0 auto;
 }
 
@@ -551,7 +551,16 @@ progress::-webkit-progress-value {
 }
 
 
-.contact .container .form input:not(:placeholder-shown):invalid,
+.contact .container .form input:invalid {
+    border: 1px solid red;
+    color: red;
+}
+
+
+
+
+
+/* .contact .container .form input:not(:placeholder-shown):invalid,
 .contact .container .form textarea:not(:placeholder-shown):invalid {
     border: 1px solid red;
 }
@@ -559,7 +568,7 @@ progress::-webkit-progress-value {
 .contact .container .form input:not(:placeholder-shown):invalid + .icon,
 .contact .container .form textarea:not(:placeholder-shown):invalid + .icon{
     opacity: 1;
-}
+} */
 
 /* contact button */
 
@@ -690,6 +699,10 @@ progress::-webkit-progress-value {
         text-align: initial;
     }
 
+    .personal-description .description {
+        text-align: initial;
+        margin: 0 10px 0 10px;
+    }
     /* ====== EXPERIENCE ====== */
 
     .experience .container {
