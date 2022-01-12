@@ -485,13 +485,17 @@ progress::-webkit-progress-value {
     content: ' * ';
 }
 
+.contact .container .form select {
+    background-color: var(--white);
+}
 .contact .container .form select option:disabled {
     color: #8e8e8e;
 }
 
 .contact .container .form .icon-input {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .contact .container .form select,
@@ -534,14 +538,19 @@ progress::-webkit-progress-value {
 
 
 .contact .container .form select:invalid,
-.contact .container .form input:not(:placeholder-shown):invalid,
+.contact .container .form input:not(:placeholder-shown):invalid ,
 .contact .container .form textarea:not(:placeholder-shown):invalid {
     border: 1px solid red;
 }
 
-.contact .container .form input:not(:placeholder-shown):invalid + .icon,
-.contact .container .form textarea:not(:placeholder-shown):invalid + .icon{
+.contact .container .form input:not(:placeholder-shown):invalid ~ .icon,
+.contact .container .form textarea:not(:placeholder-shown):invalid ~ .icon{
     opacity: 1;
+}
+.contact .container .form input:not(:placeholder-shown):invalid ~ #label,
+.contact .container .form textarea:not(:placeholder-shown):invalid ~ #label{
+    order: 1;
+    color: red;
 }
 
 .contact .container .form select:disabled + .icon,
