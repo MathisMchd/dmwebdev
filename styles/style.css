@@ -469,12 +469,12 @@ progress::-webkit-progress-value {
 
 .contact .container .form select,
 .contact .container .form input {
-    width: 100%;
+    width: 95%;
     height: 59px;
 }
 
 .contact .container .form textarea {
-    width: 100%;
+    width: 95%;
     height: 230px;
 }
 
@@ -492,10 +492,15 @@ progress::-webkit-progress-value {
     color: #8e8e8e;
 }
 
+.contact .container .form label {
+    order: -1;
+}
+
 .contact .container .form .icon-input {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
 }
 
 .contact .container .form select,
