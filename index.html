@@ -228,8 +228,7 @@
                         pari. Excepteur sint occana inna tecat cupidatat non proident.
                     </div>
                 </div>
-
-
+                
                 <div class="component">
                     <div class="date">
                         <h3 class="paragraph02">2010 - Present</h3>
@@ -346,7 +345,6 @@
             <div class="container">
                 <form class="form" method="post">
                     <div class="civilite">
-                        <label class="paragraph04" for="civilite">Civilité</label>
                         <div class="icon-input">
                             <select name="select-list" id="select-list" required >
                                 <option value="select" disabled selected>Selection</option>
@@ -354,7 +352,10 @@
                                 <option value="Femme">Femme</option>
                                 <option value="Autre">Autre</option>
                             </select>
-                            <span class="icon"></span>
+                            <label id="label" class="paragraph04" for="civilite">Civilité</label>
+                            <span class="ico"></span>
+                            <label class="error-msg">Please select an answer<label>
+
                         </div>
                     </div>
 
@@ -364,36 +365,36 @@
                             minlength="5" maxlength="50">
                             <label id="label"class="paragraph04" for="user-name">Prénom Nom</label>
                             <span class="icon"></span>
+                            <label class="error-msg">Please enter your Name and FirstName</label>
                         </div>
-                        <!-- <label class="error-msg">Please enter your Name and FirstName</label> -->
                     </div>
 
                     <div class="mail">
-                        <label class="paragraph04" for="mail">Adresse email</label>
                         <div class="icon-input">
                             <input type="email" id="mail" placeholder=" "
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required >
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required >
+                            <label id="label" class="paragraph04" for="mail">Adresse email</label>
                             <span class="icon"></span>
+                            <label class="error-msg">Veuillez entrer une adresse mail valide (example@mail.com)</label>
                         </div>
-                        <!-- <span class="error-msg">Veuillez entrer une adresse mail valide (example@mail.com)</span> -->
                     </div>
 
                     <div class="msg-title">
-                        <label class="paragraph04" for="msg-title">Titre du message</label>
                         <div class="icon-input">
                             <input type="text" id="msg-title" placeholder=" " required minlength="2">
+                            <label id="label" class="paragraph04" for="msg-title">Titre du message</label>
                             <span class="icon"></span>
+                            <label class="error-msg">Veuillez entrer un titre pour le message</label>
                         </div>
-                        <!-- <span class="error-msg">Veuillez entrer un titre pour le message</span> -->
                     </div>
 
                     <div class="msg">
-                        <label class="paragraph04" for="msg">Votre message</label>
                         <div class="icon-input">
-                            <textarea id="msg" placeholder=" " required minlength="2"></textarea>
+                            <textarea id="msg" placeholder=" " required minlength="2" required></textarea>
+                            <label id="label" class="paragraph04" for="msg">Votre message</label>
                             <span class="icon"></span>
+                            <label class="error-msg">Veuillez saisir votre message</label>
                         </div>
-                        <!-- <span class="error-msg">Veuillez saisir votre message</span> -->
                     </div>
                 </form>
                 <button class="send-buttton">Envoyer</button>
